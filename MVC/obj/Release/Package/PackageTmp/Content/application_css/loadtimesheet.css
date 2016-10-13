@@ -1,0 +1,33 @@
+.tbtimesheet
+{
+	color: green;
+    text-align: center;
+}
+
+th{
+    text-align:center;
+    background-color: #5bc0de;
+    font-weight: bold;
+}
+
+td{
+   background-color: #d9edf7;
+}
+
+.setgreen{
+    color: green;
+}
+
+.space-timesheet{
+    width: 100%;
+    height: 10px;
+}
+
+#dailogbox-time{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    height:200px;
+    width:300px;
+    position:fixed;
+}

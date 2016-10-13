@@ -1,0 +1,54 @@
+.tbtimesheet
+{
+	color: green;
+    text-align: center;
+}
+
+th{
+    text-align:center;
+    background-color: #5bc0de;
+    font-weight: bold;
+}
+
+td{
+   background-color: #d9edf7;
+}
+
+.setgreen{
+    color: green;
+}
+
+.space-timesheet{
+    width: 100%;
+    height: 10px;
+}
+
+#dailogbox-time{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    height:200px;
+    width:300px;
+    position:fixed;
+}
+#btnnewtimesheet {
+    margin-bottom:20px;
+    float:right;
+}
+
+#lblhour {
+    margin-top:6px;
+}
+
+#hourscount{
+    margin-top:6px;
+    margin-right: 10px;
+}
+
+.countdiv{
+    float: right;
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}

@@ -1,0 +1,62 @@
+﻿@model MVC.Objects.User
+@{
+    var objUser = Session["UserObject"] as MVC.Objects.User;
+}
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Content/application_js/timesheet.js"></script>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div>
+            <div class="countdiv">
+                <label class="control-label text-center" id="lblhour"> Total Hours :</label>
+                <label id="hourscount" class="text-center"></label>           
+                <button type="button" id="btnnewtimesheet" class="btn btn-primary">New Timesheet</button>            
+            </div>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th class="text-center">Sr. No</th>
+                    <th class="text-center">Project</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Hour</th>
+                    <th class="text-center">Action</th>
+                </tr>
+                <tbody id="tbtimesheet" class="table-striped"></tbody>
+            </table>
+            <input type="hidden" id="userId" value="@objUser.Id" />
+            <div class="modal fade">
+                <div id="divnewtimesheet" class="modal-dialog " role="dialog">
+                    <input type="hidden" id="timesheetid" />
+                    <div class="modal-header">
+                        <h3 id="myModalLabel">Timesheet</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal non-margined" id="dailog-new">
+                            <div class="control-group">
+                                <label class="control-label" for="firstName"> Project Name :</label>
+                                <input type="text" name="ProjectName" id="projectname" class="form-control" required /><br /><br />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="firstName"> Description</label>
+                                <input type="text" name="Description" id="description" class="form-control" required /> <br /><br />
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="firstName"> Hour :</label>
+                                <input type="number" name="Hour" id="hour" class="form-control" min="1" max="8" pattern="[1-8]{1}" required /><br /><br />
+                            </div>
+                        </form>
+                    </div>
+                       <button type="button" id="save" class="btn btn-success center-block">Save</button><br /><br />
+               </div>
+            </div>
+        </div>
+    </div>
+ <div id="dialog" title="Confirmation Required">
+        Are you sure you want to delete this?
+</div>
+</div>

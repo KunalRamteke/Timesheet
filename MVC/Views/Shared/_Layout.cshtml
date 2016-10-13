@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+   
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+ 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Timesheet", "LoadTimesheet", "Timesheet")</li>
+                        <li>@Html.ActionLink("About", "About", "Timesheet")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Timesheet")</li>                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="navlogin">                     
+                        <li id="register">@Html.ActionLink("Register", "Register", "Timesheet")</li>
+                        <li id="login">@Html.ActionLink("Login", "Login", "Timesheet")</li>                   
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+        </nav>
+        @{
+            MVC.Objects.Error objError = TempData["Error"] as MVC.Objects.Error;
+            if (objError != null)
+            {   if(objError.IsSuccess == false)
+                {
+                     @Html.Partial("_ErrorPartial", (MVC.Objects.Error)objError)
+                }
+            }
+        }             
+        @RenderBody() 
+    </div>
+</body>
+</html>

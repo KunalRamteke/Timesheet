@@ -1,0 +1,11 @@
+﻿@{
+    var objSession = Session["UserObject"] as MVC.Objects.User;
+    if (objSession!=null) // or other custom logic
+    {
+        Layout = "~/Views/Shared/_LoadTimesheetLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }    
+}
